@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About | R2Run</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* Reset dan font */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #a29e9e;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background: #c4bbbb;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(221, 216, 216, 0.8);
+        }
+
+        nav .logo img {
+            height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            font-size: 16px;
+            padding: 6px 0;
+            position: relative;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00bcd4;
+        }
+
+        nav ul li a.active::after,
+        nav ul li a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00bcd4;
+            border-radius: 2px;
+        }
+
+        nav .icons a {
+            color: #ddd;
+            font-size: 20px;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        nav .icons a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero About Section */
+        .hero-about {
+            background: linear-gradient(90deg, #1f1f1f 60%, #222 40%);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 60px 40px;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-about .text {
+            flex: 1 1 450px;
+        }
+
+        .hero-about h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #00bcd4;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero-about p {
+            font-size: 1.15rem;
+            color: #ccc;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .hero-about .image {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .hero-about .image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-about .image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #222;
+            padding: 60px 40px;
+            color: #ddd;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #00bcd4;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #1f1f1f;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .testimonial-card:hover {
+            background: #00bcd4;
+            color: #121212;
+            cursor: default;
+        }
+
+        .testimonial-card:hover .role {
+            color: #0a0a0a;
+        }
+
+        .testimonial-card .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.15;
+        }
+
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00bcd4;
+            transition: border-color 0.3s;
+        }
+
+        .testimonial-card:hover img {
+            border-color: #121212;
+        }
+
+        .testimonial-profile .info h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .testimonial-profile .info .role {
+            font-size: 0.9rem;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .testimonial-card:hover .testimonial-profile .info .role {
+            color: #222;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-about {
+                flex-direction: column-reverse;
+                padding: 40px 20px;
+            }
+
+            .hero-about .text,
+            .hero-about .image {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .hero-about h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="r2run-logo.png" alt="R2Run Logo" />
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="produk.php">Produk</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="hero-about">
+        <div class="text">
+            <h1>About R2Run</h1>
+            <p>
+                R2Run adalah brand sepatu lari modern yang memadukan teknologi terkini dengan desain minimalis dan
+                stylish.
+                Kami berkomitmen membantu setiap pelari mencapai performa terbaik mereka, baik pemula maupun atlet
+                profesional.
+                Dengan material premium dan inovasi, sepatu kami menghadirkan kenyamanan maksimal untuk tiap langkah
+                Anda.
+            </p>
+        </div>
+        <div class="image">
+            <img src="running-shoes.jpg" alt="Running Shoes" />
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="testimonial-profile">
+                    <img src="customer1.jpg" alt="Dina" />
+                    <div class="info">
+                        <h4>Dina</h4>
+                        <p class="role">Runner</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    Sepatu dari R2Run sangat ringan dan nyaman dipakai untuk lari jarak jauh. Recommended banget!
+                </p>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="testimonial-profile">
+                    <img src="customer2.jpg" alt="Rizky" />
+                    <div class="info">
+                        <h4>Rizky</h4>
+                        <p class="role">Athlete</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    Desain keren dan performa sepatu sangat mendukung latihan saya. Harga juga sangat bersahabat.
+                </p>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="testimonial-profile">
+                    <img src="customer3.jpg" alt="Lia" />
+                    <div class="info">
+                        <h4>Lia</h4>
+                        <p class="role">Casual Runner</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    Pelayanan cepat dan ramah. Sepatunya pas dan nyaman untuk dipakai setiap hari.
+                </p>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="testimonial-profile">
+                    <img src="customer4.jpg" alt="Andi" />
+                    <div class="info">
+                        <h4>Andi</h4>
+                        <p class="role">Marathoner</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    Kualitas sepatu R2Run luar biasa, saya berhasil mencatat waktu terbaik berkat dukungan produk ini.
+                </p>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="testimonial-profile">
+                    <img src="customer5.jpg" alt="Sari" />
+                    <div class="info">
+                        <h4>Sari</h4>
+                        <p class="role">Jogger</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    Modelnya modern dan cocok untuk lari santai maupun latihan intens. Saya puas banget!
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

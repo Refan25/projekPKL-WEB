@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.logo {
+
+    .nav-left,
+    .nav-center,
+    .nav-right {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo-auth {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.auth a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+
+.nav-center {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.auth-search-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.cart-icon {
+    font-size: 18px;
+}
+
+/* Main Checkout Section */
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 40px;
+}
+
+.form-section {
+    flex: 1;
+}
+
+.form-section p {
+    margin: 15px 0 8px;
+    font-size: 14px;
+}
+
+.form-section input {
+    display: block;
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ddd;
+    font-size: 14px;
+}
+
+.payment-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ddd;
+    font-size: 14px;
+    cursor: pointer;
+    width: 90%;
+}
+
+.payment-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.dana img {
+    width: 28px;
+}
+
+.shopee img {
+    width: 28px;
+}
+
+/* Order Summary */
+.summary-section {
+    flex: 0.5;
+    border-left: 1px solid #ccc;
+    padding-left: 30px;
+}
+
+.summary-section h4 {
+    margin-bottom: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.product-summary {
+    margin-top: 20px;
+}
+
+.product-summary img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.product-info {
+    margin-top: 10px;
+    font-size: 14px;
+}
